@@ -7,5 +7,5 @@
 class User < ApplicationRecord
   has_secure_password
 
-  validates :email, presense: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, message: 'must be valid email address.' }
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, message: 'must be valid email address.' }
 end
