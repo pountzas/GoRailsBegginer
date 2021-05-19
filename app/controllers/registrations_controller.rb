@@ -9,6 +9,7 @@ class RegistrationsController < ApplicationController
     # @user = User.new(params[:user]) # not safe
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to root_path, notice: 'welldone U managed to LOG'
     else
       render :new
